@@ -26,6 +26,8 @@
   <style>
     body {
       font-family: sans-serif;
+      margin: 0;
+      padding: 0;
     }
     .headerdiv {
       position: relative;
@@ -47,42 +49,68 @@
       height: 90vh;
       z-index: -1;
     }
+    .headerdiv {
+      color: white;
+      text-align: center;
+    }
+    .heading1 {
+      padding-top: 10%;
+      padding-bottom: 3%;
+      color: #ff9900;
+      font-size: 80px;
+    }
+
+    .heading2 {
+      font-size: 30px;
+    }
+    .heading3 {
+      margin: 4% 0;
+    }
+    .button1 {
+      background-color: white;
+      border-radius: 20px;
+      border: white;
+      padding: 3px 8px;
+      font-size: smaller;
+      border: 2px solid orange;
+      transition: 1s;
+    }
+    .button1:hover {
+      background-color: orange;
+      color: white;
+    }
+
+    @media screen and (max-width: 500px) {
+      .heading1 {
+        font-size: 40px;
+        padding-top: 30%;
+      }
+      .heading2 {
+        font-size: 30px;
+      }
+      .heading3 {
+        margin: 10% 0;
+      }
+      .sendbutton {
+        margin-top: 5%;
+      }
+    }
   </style>
 
   <body>
-    <div class="headerdiv" style="text-align: center; color: white">
+    <div class="headerdiv">
       <div class="overlay">
-        <h1
-          class="heading1"
-          style="
-            padding-top: 10%;
-            padding-bottom: 3%;
-            color: #ff9900;
-            font-size: 80px;
-          "
-        >
-          Contact Us
-        </h1>
-        <h1 class="heading2 mt-5" style="font-size: 30px">Get In Touch</h1>
+        <h1 class="heading1">Contact Us</h1>
+        <h1 class="heading2 mt-5">Get In Touch</h1>
         <a href="#contactform"
-          ><button
-            style="
-              background-color: white;
-              border-radius: 20px;
-              border: white;
-              padding: 3px 8px;
-              font-size: smaller;
-            "
-          >
-            Upload Your Resume
-          </button></a
+          ><button class="button1">Upload Your Resume</button></a
         >
       </div>
     </div>
 
     <div id="contactform" style="text-align: center">
-      <h1 style="margin: 4% 0">Contact Us</h1>
-      <p style="margin-top: 2%; font-size: medium">
+      <h1 class="heading3">Contact Us</h1>
+      <p class="mx-auto" style="margin-top: 2%; font-size: medium; width: 80%">
         LeegoConsulting is an enterprise level recruitment consulting firm based
         in the UK matching Corporate Professionals with Big Corporate
         opportunities.
@@ -103,10 +131,12 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            style="padding: 12px"
           />
           <div id="emailHelp" class="form-text">
             We'll never share your email with anyone else.
           </div>
+          <br />
         </div>
         <input
           type="file"
@@ -114,9 +144,11 @@
           name="filename"
           style="background-color: lightgrey"
         />
-        <button class="btn btn-sm btn-success" input type="submit">Send</button>
+        <button class="sendbutton btn btn-sm btn-success" input type="submit">
+          Send
+        </button>
       </form>
-      <br /><br /><br />
+      <br /><br />
     </div>
   </body>
 </html>
